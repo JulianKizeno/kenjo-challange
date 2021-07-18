@@ -1,0 +1,18 @@
+<div *ngIf="album">
+    <mat-card>
+        <mat-card-header>
+          <mat-card-title>{{ album.title | uppercase }}</mat-card-title>
+        </mat-card-header>
+        <div class="crop-image">
+          <img [src]="album.coverUrl" alt="" style="width: 300px;">
+        </div>
+        <div>
+            <ul>
+                <li>title: {{album.title}}</li>
+                <li>year: {{album.year}}</li>
+                <li>genre: {{album.genre}}</li>
+            </ul>
+        </div>
+    </mat-card>
+    <button (click)="updateAlbum()">Update Album</button>
+</div>
