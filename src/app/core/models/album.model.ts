@@ -4,5 +4,7 @@ export interface Album {
     artistId: string,
     coverUrl: string,
     year: number,
-    genre: string
+    genre: string,
+    _createdAt: string,
+    _updatedAt: string
 }

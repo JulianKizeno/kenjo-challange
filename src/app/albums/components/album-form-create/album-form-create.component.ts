@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
-import { AlbumsService } from '../../../services/albums.service'
+import { AlbumsService } from '../../../core/services/albums.service'
 import { Router } from '@angular/router'
 
 @Component({

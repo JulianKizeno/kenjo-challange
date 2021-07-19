@@ -5,6 +5,7 @@ import { AlbumDetailComponent } from './albums/components/album-detail/album-det
 import { AlbumFormCreateComponent } from './albums/components/album-form-create/album-form-create.component'
 import { TableComponent } from './albums/components/table/table.component'
 import { AlbumFormEditComponent } from './albums/components/album-form-edit/album-form-edit.component'
+import { ArtistTableComponent } from './artists/components/artist-table/artist-table.component'
 
 const routes: Routes = [
   {
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
     path: 'albums/:id',
     component: AlbumDetailComponent
+  },
+  {
+    path: 'artists',
+    component: ArtistTableComponent
   },
 ];
 

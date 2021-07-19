@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router'
-import { AlbumsService } from '../../../services/albums.service'
-import { Album } from '../../../models/album.model'
+import { AlbumsService } from '../../../core/services/albums.service'
+import { Album } from '../../../core/models/album.model'
 import { Router } from '@angular/router'
 
 @Component({

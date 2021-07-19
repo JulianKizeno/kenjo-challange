@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { AlbumsService } from '../../../services/albums.service'
-import { Album } from '../../../models/album.model'
+import { AlbumsService } from '../../../core/services/albums.service'
+import { Album } from '../../../core/models/album.model'
 
 @Component({
   selector: 'app-table',
