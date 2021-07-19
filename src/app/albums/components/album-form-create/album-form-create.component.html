@@ -1,0 +1,41 @@
+<app-header></app-header>
+
+<form [formGroup]="form" (ngSubmit)="saveAlbum($event)">
+    <mat-card>
+        <h1>Create a new Album</h1>
+        <mat-card-content>
+            <div class="row">
+                <div class="col-xs">
+                    <mat-form-field>
+                        <input matInput placeholder="Album Title" type="text" formControlName="title"> 
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs">
+                    <mat-form-field>
+                        <input matInput placeholder="Cover(imageURL)" type="text" formControlName="coverUrl"> 
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs">
+                    <mat-form-field>
+                        <input matInput placeholder="Year" type="number" formControlName="year"> 
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs">
+                    <mat-form-field>
+                        <input matInput placeholder="Genre" type="text" formControlName="genre"> 
+                    </mat-form-field>
+                </div>
+            </div>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button type="submit">Create Album</button>
+            <button mat-raised-button routerLink="/albums">Cancel</button>
+        </mat-card-actions>
+    </mat-card>
+</form>

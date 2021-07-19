@@ -1,18 +1,32 @@
-<div *ngIf="album">
-    <mat-card>
-        <mat-card-header>
-          <mat-card-title>{{ album.title | uppercase }}</mat-card-title>
-        </mat-card-header>
+<app-header></app-header>
+
+<h1>Album Details</h1>
+<div *ngIf="album" class="detail-container">
+    <mat-card class="detail-wrapper">
         <div class="crop-image">
-          <img [src]="album.coverUrl" alt="" style="width: 300px;">
+          <img [src]="album.coverUrl" alt="">
+          <div class="action-btns">
+            <div>
+              <button [routerLink]="['/albums/edit', album._id]">
+                <mat-icon class="edit">
+                  edit
+                </mat-icon>
+              </button>
+              <button (click)="deleteAlbum(album._id)">
+                <mat-icon class="delete">
+                  delete
+                </mat-icon>
+              </button>
+            </div>
+            <button mat-raised-button routerLink="/albums">Go back</button>
+          </div>
         </div>
-        <div>
-            <ul>
-                <li>title: {{album.title}}</li>
-                <li>year: {{album.year}}</li>
-                <li>genre: {{album.genre}}</li>
-            </ul>
-        </div>
+
+        <ul>
+            <li>Title: {{album.title}}</li>
+            <li>Year: {{album.year}}</li>
+            <li>Genre: {{album.genre}}</li>
+        </ul>
+     
     </mat-card>
-    <button (click)="updateAlbum()">Update Album</button>
 </div>

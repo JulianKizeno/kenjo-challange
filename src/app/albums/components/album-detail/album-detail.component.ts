@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router'
 import { AlbumsService } from '../../../services/albums.service'
 import { Album } from '../../../models/album.model'
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-album-detail',
@@ -14,7 +15,8 @@ export class AlbumDetailComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private albumsService: AlbumsService
+    private albumsService: AlbumsService,
+    private router: Router
   ) { }
 
   ngOnInit(){
@@ -31,16 +33,11 @@ export class AlbumDetailComponent implements OnInit {
       })
   }
 
-  updateAlbum(){
-    const updateAlbum: Partial<Album> = {
-      title: 'Romeo santos',
-      coverUrl: 'https://cdns-images.dzcdn.net/images/artist/27c204497e5c7e95fcf6e83c11e741a7/500x500.jpg',
-      year: 2001,
-      genre: 'Bachata'
-    }
-    this.albumsService.updateAlbum('60f3f72a4ab61600138c9332', updateAlbum)
+  deleteAlbum(id: string){
+    this.albumsService.deleteAlbum(id)
       .subscribe(albums => {
         console.log(albums)
+        this.router.navigate(['./albums'])
       })
   }
 
