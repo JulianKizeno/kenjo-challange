@@ -1,2 +1,34 @@
-<app-header></app-header>
-<p>artist-detail works!</p>
+<
+
+<h1>Artist Details</h1>
+<div *ngIf="artist" class="detail-container">
+    <mat-card class="detail-wrapper">
+        <div class="crop-image">
+          <img [src]="artist.photoUrl" alt="">
+          <div class="action-btns">
+            <div>
+              <button [routerLink]="['/artists/edit', artist._id]">
+                <mat-icon class="edit">
+                  edit
+                </mat-icon>
+              </button>
+              <button (click)="deleteArtist(artist._id)">
+                <mat-icon class="delete">
+                  delete
+                </mat-icon>
+              </button>
+            </div>
+            <button mat-raised-button routerLink="/artists">Go back</button>
+          </div>
+        </div>
+
+        <ul>
+            <li><strong>Name:</strong> {{artist.name}}</li>
+            <li><strong>Birth:</strong> {{artist.birthdate  | date: 'longDate'}}</li>
+            <li *ngIf="artist.deathDate === null; else elseBlock"><strong>Death:</strong> Still Alive</li>
+            <ng-template #elseBlock><strong style="
+                display: contents;">Death:</strong> {{artist.deathDate | date: 'longDate'}}</ng-template>
+        </ul>
+     
+    </mat-card>
+</div>

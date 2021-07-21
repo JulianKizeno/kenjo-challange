@@ -1,4 +1,4 @@
-<app-header></app-header>
+
 
 <h1>Album Details</h1>
 <div *ngIf="album" class="detail-container">
@@ -23,9 +23,10 @@
         </div>
 
         <ul>
-            <li>Title: {{album.title}}</li>
-            <li>Year: {{album.year}}</li>
-            <li>Genre: {{album.genre}}</li>
+            <li><strong>Artist:</strong> {{album.artistId}}</li>
+            <li><strong>Album:</strong> {{album.title}}</li>
+            <li><strong>Year:</strong> {{album.year}}</li>
+            <li><strong>Genre:</strong> {{album.genre}}</li>
         </ul>
      
     </mat-card>

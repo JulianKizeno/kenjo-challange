@@ -1,2 +1,43 @@
-<app-header></app-header>
-<p>artist-form-edit works!</p>
+
+
+<form [formGroup]="form" (ngSubmit)="editArtist($event)">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Artist</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="row">
+                <div class="col-xs">
+                    <mat-form-field>
+                        <input matInput placeholder="Artist name" type="text" formControlName="name"> 
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs">
+                    <mat-form-field>
+                        <input matInput placeholder="Photo(imageURL)" type="text" formControlName="photoUrl"> 
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs">
+                    <mat-form-field>
+                        <input matInput placeholder="Birth" type="date" formControlName="birthdate"> 
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs">
+                    <mat-form-field>
+                        <input matInput placeholder="Death" type="date" formControlName="deathDate"> 
+                    </mat-form-field>
+                </div>
+            </div>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button type="submit">Edit Artist</button>
+            <button mat-raised-button [routerLink]="['/artists/edit', id]">Cancel</button>
+        </mat-card-actions>
+    </mat-card>
+</form>

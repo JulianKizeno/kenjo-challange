@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { AlbumsService } from '../../../core/services/albums.service'
+import { ArtistsService } from '../../../core/services/artists.service'
 import { Router } from '@angular/router'
 
 @Component({
@@ -12,15 +13,27 @@ export class AlbumFormCreateComponent implements OnInit {
 
   form: FormGroup
 
+  artists;
+
   constructor(
     private formBuilder: FormBuilder,
     private albumsService: AlbumsService,
+    private artistsService: ArtistsService,
     private router: Router
   ) { 
     this.buildForm()
    }
 
   ngOnInit(): void {  
+    this.fetchArtists()
+  }
+
+  fetchArtists(){
+    this.artistsService.getAllArtists()
+      .subscribe((artists) => {
+        this.artists = artists
+        console.log(this.artists)
+      })
   }
 
   saveAlbum(event: Event){
@@ -39,6 +52,7 @@ export class AlbumFormCreateComponent implements OnInit {
   private buildForm(){
     this.form = this.formBuilder.group({
       title: ['', [Validators.required]],
+      artistId: ['', [Validators.required]],
       coverUrl: ['', [Validators.required]],
       year: ['', [Validators.required]],
       genre: ['', [Validators.required]],

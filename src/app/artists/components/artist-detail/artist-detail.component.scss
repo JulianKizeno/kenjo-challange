@@ -1,0 +1,45 @@
+h1{
+    text-align: center;
+    margin-top: 20px
+}
+
+.detail-container{
+    display: flex;
+    justify-content: center;
+    .detail-wrapper{
+        display: flex;
+        padding: 30px 40px;
+        .crop-image{
+            display: flex;
+            flex-direction: column;
+            height: 240px;
+            justify-content: space-between;
+            img{
+                width: 220px;
+                height: 200px;
+            }
+            .action-btns{
+                display: flex;
+                justify-content: space-between;
+                button{
+                    border: none;
+                    background: transparent;
+                    cursor: pointer;
+                    .edit:hover{
+                        color: green;
+                    }
+                    .delete:hover{
+                        color: red;
+                    }
+                }
+            }
+        }
+        ul{
+            list-style: none;
+            height: 160px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+    }
+}

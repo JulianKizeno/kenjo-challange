@@ -16,7 +16,7 @@ export class TableComponent implements OnInit {
     private albumsService: AlbumsService
   ) { }
 
-  displayedColumns = ['Album Title', 'Year', 'Details'];
+  displayedColumns = ['Album Title', 'Details'];
 
   ngOnInit(): void {
     this.fetchAlbums()
@@ -29,14 +29,4 @@ export class TableComponent implements OnInit {
         this.albums = albums
       })
   }
-
-  
-
-  // ngAfterViewInit(): void {
-  //   this.dataSource.sort = this.sort;
-  //   this.dataSource.paginator = this.paginator;
-  //   this.table.dataSource = this.dataSource;
-  // }
-
-
 }

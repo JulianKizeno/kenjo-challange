@@ -1,2 +1,41 @@
-<app-header></app-header>
-<p>artist-form-create works!</p>
+
+
+<form [formGroup]="form" (ngSubmit)="saveArtist($event)">
+    <mat-card>
+        <h1>Create a new Artist</h1>
+        <mat-card-content>
+            <div class="row">
+                <div class="col-xs">
+                    <mat-form-field>
+                        <input matInput placeholder="Artist Name" type="text" formControlName="name"> 
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs">
+                    <mat-form-field>
+                        <input matInput placeholder="Photo(imageURL)" type="text" formControlName="photoUrl"> 
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs">
+                    <mat-form-field>
+                        <input matInput placeholder="BirthDate" type="date" formControlName="birthdate"> 
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs">
+                    <mat-form-field>
+                        <input matInput placeholder="DeathDate" type="date" formControlName="deathDate"> 
+                    </mat-form-field>
+                </div>
+            </div>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button type="submit">Create Artist</button>
+            <button mat-raised-button routerLink="/artists">Cancel</button>
+        </mat-card-actions>
+    </mat-card>
+</form>
