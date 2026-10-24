@@ -5,6 +5,7 @@ import { Artist } from '../../../core/models/artist.model'
 import { Router } from '@angular/router'
 
 @Component({
+  standalone: false,
   selector: 'app-artist-detail',
   templateUrl: './artist-detail.component.html',
   styleUrls: ['./artist-detail.component.scss']

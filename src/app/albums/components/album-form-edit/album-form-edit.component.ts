@@ -6,6 +6,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router'
 
 
 @Component({
+  standalone: false,
   selector: 'app-album-form-edit',
   templateUrl: './album-form-edit.component.html',
   styleUrls: ['./album-form-edit.component.scss']

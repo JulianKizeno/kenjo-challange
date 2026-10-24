@@ -4,6 +4,7 @@ import { ArtistsService } from '../../../core/services/artists.service'
 import { Router } from '@angular/router'
 
 @Component({
+  standalone: false,
   selector: 'app-artist-form-create',
   templateUrl: './artist-form-create.component.html',
   styleUrls: ['./artist-form-create.component.scss']

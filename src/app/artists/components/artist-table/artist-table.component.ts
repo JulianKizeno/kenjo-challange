@@ -3,6 +3,7 @@ import { ArtistsService } from '../../../core/services/artists.service'
 import { Artist } from '../../../core/models/artist.model'
 
 @Component({
+  standalone: false,
   selector: 'app-artist-table',
   templateUrl: './artist-table.component.html',
   styleUrls: ['./artist-table.component.scss']

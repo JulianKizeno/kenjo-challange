@@ -6,6 +6,7 @@ import { Album } from '../../../core/models/album.model'
 import { Router } from '@angular/router'
 
 @Component({
+  standalone: false,
   selector: 'app-album-detail',
   templateUrl: './album-detail.component.html',
   styleUrls: ['./album-detail.component.scss']

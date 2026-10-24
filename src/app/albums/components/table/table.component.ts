@@ -4,6 +4,7 @@ import { AlbumsService } from '../../../core/services/albums.service'
 import { Album } from '../../../core/models/album.model'
 
 @Component({
+  standalone: false,
   selector: 'app-table',
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.scss']

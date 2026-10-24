@@ -5,6 +5,7 @@ import { ArtistsService } from '../../../core/services/artists.service'
 import { Router } from '@angular/router'
 
 @Component({
+  standalone: false,
   selector: 'app-album-form-create',
   templateUrl: './album-form-create.component.html',
   styleUrls: ['./album-form-create.component.scss']
